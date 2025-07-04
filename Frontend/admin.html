@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-attachment: fixed;
+      padding: 20px;
+    }
+
+    marquee {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background-color: #ff6f00;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      z-index: 1;
+    }
+
+    .glass-container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 400px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: fadeIn 1s ease;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 25px;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    input:focus {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    input[type="submit"] {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px rgba(0, 115, 255, 0.7);
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 20px;
+      color: #eee;
+      font-size: 14px;
+    }
+
+    .links a {
+      color: #90cdf4;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .glass-container {
+        padding: 25px 20px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <marquee behavior="scroll" direction="left">Admin access only. Please enter credentials carefully.</marquee>
+
+  <div class="glass-container">
+    <h2>Admin Login</h2>
+    <form onsubmit="goToIndex(); return false;">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Password" >
+      <input type="submit" value="Login">
+    </form>
+    <div class="links">
+      <p>Go back to <a href="USER.html">User Login</a></p>
+      <p>Forgot Password? <a href="forgot.html">Click here</a></p>
+    </div>
+  </div>
+
+  <script>
+    function goToIndex() {
+      window.location.href = "adminaccess.html";
+    }
+  </script>
+
+</body>
+</html>
